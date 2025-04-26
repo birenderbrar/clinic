@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Paradise Comprehensive Medical Group</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50 text-gray-800">
+  <!-- Header -->
+  <header class="bg-blue-700 text-white p-6 shadow">
+    <div class="container mx-auto flex justify-between items-center">
+      <h1 class="text-2xl font-bold">Paradise Comprehensive Medical Group</h1>
+      <nav class="space-x-4">
+        <a href="#about" class="hover:underline">About</a>
+        <a href="#team" class="hover:underline">Team</a>
+        <a href="#services" class="hover:underline">Services</a>
+        <a href="#contact" class="hover:underline">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="text-center py-12 bg-blue-100">
+    <h2 class="text-3xl font-semibold">Your Health, Our Priority</h2>
+    <p class="mt-4 text-lg">Dedicated to your care from day one.</p>
+  </section>
+
+  <!-- Hero Image Section (Centered) -->
+  <section class="bg-gray-100 flex flex-col items-center justify-center py-12">
+    <div class="relative w-96 h-96 mb-4">  <!-- Fixed container size (larger to accommodate images) -->
+      <img id="slideshow"
+           src="images/ali.jpeg"
+           alt="Slideshow"
+           class="w-full h-full object-contain rounded-lg shadow-lg border border-gray-300 transition-opacity duration-500 ease-in-out bg-white" />
+    </div>
+  
+    <div class="flex gap-2">  <!-- Reduced the gap between buttons -->
+      <button onclick="prevImage()"
+              class="px-3 py-1.5 bg-blue-500 text-white rounded hover:bg-blue-600 shadow text-sm">  <!-- Reduced size of the button -->
+        ⬅️ Previous
+      </button>
+      <button onclick="nextImage()"
+              class="px-3 py-1.5 bg-blue-500 text-white rounded hover:bg-blue-600 shadow text-sm">  <!-- Reduced size of the button -->
+        Next ➡️
+      </button>
+    </div>
+  </section>
+  
+  <script>
+    const images = ["images/ali.jpeg", "images/mandy.jpeg", "images/momo3.jpeg"];  // Add more images here
+    let index = 0;
+    const slideshow = document.getElementById("slideshow");
+  
+    function showImage() {
+      slideshow.src = images[index];
+    }
+  
+    function nextImage() {
+      index = (index + 1) % images.length;
+      showImage();
+    }
+  
+    function prevImage() {
+      index = (index - 1 + images.length) % images.length;
+      showImage();
+    }
+  </script>
+  
+  
+
+
+  <!-- About Section -->
+  <section id="about" class="py-10 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-4">About Us</h3>
+      <p>At PCMG (Paradise Comprehensive Medical Group), we specialize in addressing the unique health needs of every individual. 
+        Our approach prioritizes preventive care, chronic disease management, and support for healthy aging, ensuring that our patients thrive at every stage of adult life. 
+        Rooted in a patient-centered philosophy, we are committed to building lasting relationships and delivering personalized, compassionate care—designed to empower you to live your healthiest life.</p>
+    </div>
+  </section>
+
+  <!-- Team Section -->
+  <section id="team" class="py-10 px-6 bg-gray-100">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-4">Our Team</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <h4 class="text-xl font-bold">Dr. Ali Alamar </h4>
+          <p>With over 35 years of experience, Dr. Ali Alamar has been proudly serving the diverse community of La Mesa with dedication and compassion. 
+            He is affiliated with Sharp Grossmont Hospital and several other leading medical facilities, ensuring his patients receive comprehensive, high-quality care across the continuum of services.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold">NP Mandeep Kaur</h4>
+          <p>Compassionate and committed to patient-centered care, Mandeep Kaur, NP, brings years of experience serving the La Mesa community. Affiliated with Sharp Grossmont Hospital and other respected facilities, she provides coordinated, high-quality care tailored to each patient’s needs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-10 px-6">
+    <div class="max-w-4xl mx-auto">
+      <h3 class="text-2xl font-semibold mb-4">Our Services</h3>
+      <ul class="list-disc ml-6">
+        <li>General Checkup</li>
+        <li>Chronic Disease Management</li>
+        <li>Preventive Care</li>
+        <li>Diagnosis and Treatment of Illness</li>
+        <li>Collaboration with Specialists</li>
+        <li>Mental Health Services</li>
+        <li>New Patient Management</li>
+      </ul>
+    </div>
+  </section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-10 px-6 bg-gray-100">
+  <div class="max-w-4xl mx-auto"> <!-- Aligned width with Services Section -->
+    <h3 class="text-2xl font-semibold mb-4">Contact Us</h3>
+    <p><strong>Address:</strong>340 4th Ave #11, Chula Vista, CA 91910, United States</p>
+    <p><strong>Phone:</strong> +1619-207-0000</p>
+    <p><strong>Email:</strong> pcmg@paradisemedicalgroup.org</p>
+    <p><strong>Working Hours:</strong> Mon - Fri: 9 AM - 4.30 PM</p>
+    <div class="mt-4">
+      <!-- Embed Google Maps with provided Embed URL -->
+      <iframe 
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3359.7731146533647!2d-117.0844729!3d32.63886499999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80d94de40ccae551%3A0x2916e4c1480fdfb9!2sParadise%20Comprehensive%20Medical%20Group!5e0!3m2!1sen!2sca!4v1745107656979!5m2!1sen!2sca" 
+        width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" 
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+  <!-- Footer -->
+  <footer class="bg-blue-700 text-white text-center p-4 mt-10">
+    <p>&copy; 2025 Paradise Comprehensive Medical Group. All rights reserved.</p>
+  </footer>
+</body>
+</html>
